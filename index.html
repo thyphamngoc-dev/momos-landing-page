@@ -1,3 +1,4 @@
+Put your HTML text here
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -62,6 +63,7 @@
 
         .highlight-brand { color: var(--color-brand); }
         .text-secondary { color: var(--color-text-secondary); }
+        .text-center { text-align: center; }
         
         section {
             padding: 96px 24px;
@@ -303,29 +305,135 @@
             border: 1px solid rgba(255,255,255,0.1);
         }
 
-        /* --- 4. PROOF BAR SECTION --- */
-        .proof-section {
-            background-color: var(--color-bg);
-        }
-
-        .proof-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
-        }
-
-        .proof-card {
+        /* --- 4. OUTCOMES SECTION --- */
+        .outcomes-section {
             background-color: var(--color-bg-white);
-            padding: 32px 24px;
-            border-radius: 8px;
-            box-shadow: var(--shadow-s);
             text-align: center;
+            padding: 96px 24px;
         }
 
-        .proof-card h2 {
+        .outcomes-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background-color: var(--color-brand-light);
+            color: var(--color-text-primary);
+            font-size: 14px;
+            font-weight: 500;
+            padding: 6px 16px;
+            border-radius: 100px;
+            margin-bottom: 24px;
+        }
+
+        .outcomes-section h2 {
+            font-size: 56px;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .outcomes-section .subtitle {
+            font-size: 20px;
+            color: var(--color-text-secondary);
+            margin-bottom: 80px;
+            font-weight: 400;
+        }
+
+        .outcomes-container {
+            position: relative;
+            max-width: 1100px;
+            margin: 0 auto 64px auto;
+        }
+
+        .outcomes-line {
+            position: absolute;
+            top: 24px;
+            left: 5%;
+            right: 5%;
+            height: 2px;
+            background: linear-gradient(90deg, #D73E33 0%, #E87A4D 30%, #8B5CF6 70%, #A78BFA 100%);
+            z-index: 0;
+            opacity: 0.8;
+        }
+
+        .outcomes-grid {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            z-index: 1;
+            gap: 16px;
+        }
+
+        .outcome-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: 1;
+        }
+
+        .outcome-icon {
+            width: 48px;
+            height: 48px;
+            background: #252525;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 32px;
+            box-shadow: 0 0 15px rgba(215, 62, 51, 0.5);
+            border: 3px solid white;
+            color: white;
+            font-size: 18px;
+        }
+        
+        .outcome-item:nth-child(2) .outcome-icon { box-shadow: 0 0 15px rgba(232, 122, 77, 0.4); }
+        .outcome-item:nth-child(3) .outcome-icon { box-shadow: 0 0 15px rgba(139, 92, 246, 0.4); }
+        .outcome-item:nth-child(4) .outcome-icon { box-shadow: 0 0 15px rgba(139, 92, 246, 0.4); }
+        .outcome-item:nth-child(5) .outcome-icon { box-shadow: 0 0 15px rgba(167, 139, 250, 0.4); }
+
+        .outcome-item h3 {
             font-size: 48px;
-            color: var(--color-brand);
+            color: #C24A3B;
             margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .outcome-item p {
+            font-size: 18px;
+            color: var(--color-text-primary);
+            font-weight: 500;
+        }
+
+        .btn-glow {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 16px 32px 16px 40px;
+            background: linear-gradient(135deg, #E2665B, #D04F46);
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            border-radius: 14px;
+            text-decoration: none;
+            box-shadow: 0 10px 30px rgba(215, 62, 51, 0.35);
+            transition: all 0.3s ease;
+        }
+
+        .btn-glow:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px rgba(215, 62, 51, 0.5);
+        }
+
+        .btn-arrow-circle {
+            background: white;
+            color: #D04F46;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
         }
 
         /* --- 5. BEFORE VS AFTER --- */
@@ -470,10 +578,9 @@
         }
 
         .alfie-avatar img {
-            width: 110%;
-            height: 110%;
-            object-fit: cover;
-            transform: scale(1.1);
+            width: 90%;
+            height: 90%;
+            object-fit: contain;
         }
 
         .chat-header-info h3 {
@@ -544,12 +651,13 @@
             flex-shrink: 0;
             overflow: hidden;
             margin-top: 4px;
+            padding: 2px;
         }
 
         .message-avatar img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
         }
 
         .message-bubble {
@@ -716,7 +824,70 @@
             display: block;
         }
 
-        /* --- 8. CTA SECTION --- */
+        /* --- 8. WHY CHOOSE US --- */
+        .why-choose-us-section {
+            background-color: var(--color-bg);
+            padding: 120px 24px;
+        }
+
+        .why-choose-us-section h2 {
+            font-size: 56px;
+            margin-bottom: 64px;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+            text-align: left;
+        }
+
+        .feature-card {
+            background: var(--color-bg-white);
+            border-radius: 20px;
+            padding: 24px;
+            box-shadow: var(--shadow-s);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-m);
+        }
+
+        .feature-image {
+            width: 100%;
+            height: 220px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--color-text-secondary);
+            font-size: 14px;
+            font-weight: 500;
+            overflow: hidden;
+            border: 1px solid var(--color-border);
+        }
+
+        .feature-card h4 {
+            font-size: 22px;
+            margin-bottom: 0;
+            line-height: 1.4;
+        }
+
+        .feature-card p {
+            font-size: 16px;
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        /* --- 9. CTA SECTION --- */
         .cta-section {
             background-color: var(--color-text-primary);
             color: var(--color-bg-white);
@@ -738,23 +909,37 @@
             .feature-list li { text-align: left; display: inline-block; }
             .chat-widget { width: 100%; max-width: 420px; margin: 0 auto; }
             .alfie-character { right: -60px; width: 200px; height: 200px; }
+            
+            /* Responsive Why Choose Us */
+            .features-grid { grid-template-columns: repeat(2, 1fr); }
+            .why-choose-us-section h2 { font-size: 48px; }
         }
 
         @media (max-width: 992px) {
             .comparison-grid { grid-template-columns: 1fr; }
-            .proof-grid { grid-template-columns: 1fr 1fr; }
             .hero-section h1 { font-size: 48px; }
             .hero-section { padding-top: 100px; }
+            
+            .outcomes-grid { flex-wrap: wrap; justify-content: center; gap: 48px; }
+            .outcome-item { min-width: 30%; }
+            .outcomes-line { display: none; }
+            .outcomes-section h2 { font-size: 40px; }
         }
 
         @media (max-width: 768px) {
-            .proof-grid { grid-template-columns: 1fr; }
             .role-card { width: 100%; }
             section { padding: 64px 24px; }
             .hero-section h1 { font-size: 40px; }
             .meet-alfie-section { padding: 48px 20px; }
             .meet-alfie-content h2 { font-size: 32px; }
             .alfie-character { right: -30px; width: 160px; height: 160px; }
+            
+            .outcome-item { min-width: 100%; }
+            .outcomes-section h2 { font-size: 32px; }
+
+            /* Mobile Why Choose Us */
+            .features-grid { grid-template-columns: 1fr; }
+            .why-choose-us-section h2 { font-size: 36px; }
         }
     </style>
 </head>
@@ -812,24 +997,49 @@
         </div>
     </section>
 
-    <section class="proof-section">
-        <div class="container proof-grid">
-            <div class="proof-card">
-                <h2>0% ➔ 100%</h2>
-                <p class="text-secondary">review response rate</p>
+    <section class="outcomes-section">
+        <div class="container text-center">
+            <div class="outcomes-tag">
+                <span style="color: #D73E33;">✨</span> Key metrics
             </div>
-            <div class="proof-card">
-                <h2>300+</h2>
-                <p class="text-secondary">hours saved</p>
+            <h2>Outcomes That Scale Across Locations</h2>
+            <p class="subtitle">Drive more revenue, lower costs, happier customers, and better data at every location.</p>
+            
+            <div class="outcomes-container">
+                <div class="outcomes-line"></div>
+                <div class="outcomes-grid">
+                    <div class="outcome-item">
+                        <div class="outcome-icon">💼</div>
+                        <h3>20%</h3>
+                        <p>More Sales</p>
+                    </div>
+                    <div class="outcome-item">
+                        <div class="outcome-icon">🧲</div>
+                        <h3>3x</h3>
+                        <p>More Customer Recovered</p>
+                    </div>
+                    <div class="outcome-item">
+                        <div class="outcome-icon">🤍</div>
+                        <h3>25%</h3>
+                        <p>Higher CSAT</p>
+                    </div>
+                    <div class="outcome-item">
+                        <div class="outcome-icon">⚠️</div>
+                        <h3>30%</h3>
+                        <p>Fewer Incidents</p>
+                    </div>
+                    <div class="outcome-item">
+                        <div class="outcome-icon">⚡</div>
+                        <h3>5x</h3>
+                        <p>More Customers Engaged</p>
+                    </div>
+                </div>
             </div>
-            <div class="proof-card">
-                <h2>+$39K–$125K</h2>
-                <p class="text-secondary">per location/year</p>
-            </div>
-            <div class="proof-card">
-                <h2>$0</h2>
-                <p class="text-secondary">additional headcount</p>
-            </div>
+
+            <a href="#" class="btn-glow">
+                Book a Demo 
+                <span class="btn-arrow-circle">→</span>
+            </a>
         </div>
     </section>
 
@@ -870,7 +1080,7 @@
                 <div class="chat-widget">
                     <div class="chat-header">
                         <div class="alfie-avatar">
-                            <img src="Alfie Basic (1)-modified.svg" alt="Alfie" id="alfieAvatar">
+                            <img src="Alfie Basic (1)-modified.svg" alt="Alfie Avatar">
                         </div>
                         <div class="chat-header-info">
                             <h3>Alfie</h3>
@@ -892,7 +1102,7 @@
                 </div>
                 
                 <div class="alfie-character">
-                    <img src="Alfie Waving from Brand Kit.svg" alt="Alfie Waving" id="alfieCharacter">
+                    <img src="Alfie Waving from Brand Kit.svg" alt="Alfie Waving">
                 </div>
             </div>
         </div>
@@ -926,6 +1136,60 @@
                     <span class="role-icon">🤝</span>
                     <h4>Loyalty Strategist</h4>
                     <p class="text-secondary">Re-engages past guests to drive repeat visits and revenue.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-choose-us-section">
+        <div class="container text-center">
+            <div class="outcomes-tag" style="background-color: var(--color-brand-light); margin-bottom: 24px;">
+                <span style="color: #D73E33;">🎯</span> Why choose us
+            </div>
+            <h2>20,000 Global Locations<br>Can't Be Wrong</h2>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-image" style="background-color: #E8F4FA; border: none;">
+                        [ Globe / Map Graphic ]
+                    </div>
+                    <h4>Purpose-Built For Multi-Location Brands</h4>
+                    <p>Get instant visibility into every location, from brand-level trends to the smallest incident detail with AI-powered custom reports.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-image" style="background-color: #FEF4F3; border: none;">
+                        [ Omnichannel Channels Graphic ]
+                    </div>
+                    <h4>Every Location, Channel, and Guest - All in One Place</h4>
+                    <p>Unify all your customer interactions to deliver better experiences and cut the cost of disconnected tools.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-image" style="background-color: #F8F4FE; border: none;">
+                        [ Personalization AI Graphic ]
+                    </div>
+                    <h4>Personalization at Scale</h4>
+                    <p>With Momos Guest AI, your team can engage every customer with the right tone, message, and timing—24/7.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-image" style="background-color: #F4F7FB; border: none;">
+                        [ Security UI Graphic ]
+                    </div>
+                    <h4>Enterprise-Ready Security</h4>
+                    <p>Bank-grade security and compliance features designed to keep your multi-location data safe, secure, and private at all times.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-image" style="background-color: #F4FAEE; border: none;">
+                        [ Conversion / Speed Graphic ]
+                    </div>
+                    <h4>We Build Faster Than Everyone</h4>
+                    <p>Rapid deployment and continuous software updates mean you always have the most advanced hospitality tools at your fingertips.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-image" style="background-color: #FEF8EA; border: none;">
+                        [ Customer Success Graphic ]
+                    </div>
+                    <h4>Customer Success by Your Side</h4>
+                    <p>Get a dedicated team of hospitality tech experts committed to ensuring you achieve your business goals day in and day out.</p>
                 </div>
             </div>
         </div>
@@ -965,7 +1229,7 @@
                 typingDiv.className = 'message assistant';
                 typingDiv.innerHTML = `
                     <div class="message-avatar">
-                        <img src="${document.getElementById('alfieAvatar').src}" alt="Alfie">
+                        <img src="Alfie Basic (1)-modified.svg" alt="Alfie Avatar">
                     </div>
                     <div class="typing-indicator">
                         <span></span>
@@ -991,7 +1255,7 @@
                 if (type === 'assistant') {
                     messageDiv.innerHTML = `
                         <div class="message-avatar">
-                            <img src="${document.getElementById('alfieAvatar').src}" alt="Alfie">
+                            <img src="Alfie Basic (1)-modified.svg" alt="Alfie Avatar">
                         </div>
                         <div class="message-bubble">${text}</div>
                     `;
